@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css.css">
+</head>
+<Style>
+  /* =========================
+   PRODUCT CARD STYLE
+========================= */
+
+.fruite-item {
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+ box-shadow: 0 12px 30px rgba(15, 61, 52, 0.08);
+}
+
+/* Hover effect for card */
+.fruite-item:hover {
+    transform: translateY(-8px);
+   box-shadow: 0 12px 30px rgba(15, 61, 52, 0.08);
+}
+
+/* =========================
+   IMAGE CONTROL (IMPORTANT)========================= */
+
+.fruite-img {
+    width: 100%;
+    height: 200px;          /* محدودیت ارتفاع */
+    overflow: hidden;
+    position: relative;
+}
+
+.fruite-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      
+    transition: transform 0.4s ease;
+    border-radius: 0% !important;
+}
+
+/* Zoom effect on hover */
+.fruite-item:hover .fruite-img img {
+    transform: scale(1.08);
+}
+
+/* =========================
+   CATEGORY BADGE
+========================= */
+
+.fruite-item .bg-secondary {
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    opacity: 0.9;
+}
+
+/* =========================
+   BUTTON STYLE
+========================= */
+
+.fruite-item .btn {
+    transition: all 0.3s ease;
+}
+
+.fruite-item .btn:hover {
+    background: #0F3D34;
+    color: #fff !important;
+    transform: scale(1.05);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 992px) {
+    .fruite-img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fruite-img {
+        height: 225px;
+    }
+
+    .fruite-item:hover {
+        transform: none; /* موبایل کمتر حرکت داشته باشه */
+    }
+}
+/* =========================
+   PAGINATION STYLE (MODERN)
+========================= */
+
+.pagination {
+    gap: 6px;
+    flex-wrap: wrap; /* مهم برای ریسپانسیو */
+}
+
+/* هر دکمه */
+.pagination a.ff {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 42px;
+    height: 42px;
+
+    padding: 0 12px;
+    border-radius: 10px;
+
+    border: 1px solid #0F3D34;
+    background: #0F3D34;
+
+     color: #C8A96A;
+    text-decoration: none;
+
+    font-weight: 500;
+    font-size: 15px;
+
+    transition: all 0.25s ease;
+}
+
+/* hover */
+.pagination a.ff:hover {
+    background:  #C8A96A;
+    color: #0F3D34;
+    border-color: #C8A96A;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(15, 61, 52, 0.08);
+}
+
+/* active page (اگر کلاس active بدی) */
+.pagination a.active {
+    background: #0F3D34;
+    color: #fff;
+    border-color: #0F3D34;
+    font-weight: 700;
+}
+
+/* arrows (« ») */
+.pagination a.ff:first-child,
+.pagination a.ff:last-child {
+    font-weight: bold;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .pagination a.ff {
+        min-width: 36px;
+        height: 36px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+    .pagination {
+        gap: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pagination a.ff {
+        min-width: 32px;
+        height: 32px;
+        font-size: 12px;
+        padding: 0 8px;
+    }
+}
+.gg{
+  background-color: #C8A96A;
+  color: #0F3D34;
+}
+
+
+
+/* ===========================
+   SEARCH & SORT SECTION
+===========================*/
+
+.search-sort {
+    margin-bottom: 30px;
+}
+
+/* Search Box */
+.input-group {
+    border-radius: 12px;
+    overflow: hidden;
+  box-shadow: 0 12px 30px rgba(15, 61, 52, 0.08);
+}
+
+.input-group .form-control {
+    border: none;
+    height: 52px;
+    font-size: 15px;
+    padding-left: 18px;
+    box-shadow: none;
+}
+
+.input-group .form-control:focus {
+    box-shadow: none;
+}
+
+.input-group-text {
+    background: #0F3D34;
+    color: #C8A96A;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.input-group-text:hover {
+    background: #0F3D34;
+}
+
+.input-group-text i {
+    font-size: 18px;
+}
+
+/* ===========================
+   SORT BOX
+===========================*/
+
+.bg-light {
+    border-radius: 12px !important;
+    box-shadow: 0 5px 18px rgba(0,0,0,.08);
+}
+
+.bg-light label {
+    font-weight: 600;
+    color: #C8A96A;
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+.bg-light select {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 500;
+    color: #0F3D34;
+    min-width: 130px;
+}
+
+.bg-light select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Hover */
+.bg-light:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,.12);
+}
+
+/* Placeholder */
+.form-control::placeholder {
+    color: #999;
+}
+
+/* ===========================
+   RESPONSIVE
+===========================*/
+
+@media (max-width:992px){
+
+    .input-group{
+        margin-bottom:20px;
+    }
+
+    .bg-light{
+        margin-top:15px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .bg-light{
+        display:flex !important;
+        flex-direction:column;
+        align-items:flex-start !important;
+        gap:10px;
+        padding:15px !important;
+    }
+
+    .bg-light select{
+        width:100%;
+        border:1px solid #0F3D34;
+        border-radius:8px;
+        padding:10px;
+        background:#F2F7F5;
+    }
+
+    .input-group .form-control{
+        height:48px;
+        font-size:14px;
+    }
+
+}
+
+@media (max-width:576px){
+
+    .input-group .form-control{
+        height:45px;
+        font-size:13px;
+    }
+
+    .input-group-text{
+        padding:12px 15px !important;
+    }
+
+    .bg-light{
+        padding:12px !important;
+    }
+
+}
+
+/* Sidebar */
+.col-lg-3 h4{
+    font-size:20px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+/* Box */
+.col-lg-3 .mb-3{
+    background:#F2F7F5;
+    padding:18px;
+    border-radius:12px;
+    box-shadow: 0 12px 30px rgba(15, 61, 52, 0.08);
+}
+
+/* Categories */
+/* =========================
+      Categories
+========================= */
+
+.fruite-categorie{
+    padding:0;
+    margin:0;
+}
+
+.fruite-categorie li{
+    list-style:none;
+    margin-bottom:12px;
+}
+
+.fruite-name{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    flex-wrap:nowrap;      /* اجازه شکستن نده */
+}
+
+.fruite-name a{
+    color:#C8A96A;
+    text-decoration:none;
+    font-weight:500;
+    white-space:nowrap;    /* متن در یک خط */
+    overflow:hidden;
+    text-overflow:ellipsis;
+    transition:.3s;
+}
+
+.fruite-name span{
+    background:#0F3D34;
+    color:#fff;
+    padding:2px 10px;
+    border-radius:20px;
+    font-size:12px;
+    flex-shrink:0;         /* عدد کوچک نشود */
+    margin-left:10px;
+}
+
+.fruite-categorie li:hover a{
+    color:#0F3D34;
+    padding-left:6px;
+}
+
+/* =========================
+      Mobile
+========================= */
+
+@media (max-width:991.98px){
+
+    .fruite-name{
+        display:flex !important;
+        justify-content:space-between !important;
+        align-items:center !important;
+        flex-wrap:nowrap !important;
+        width:100%;
+    }
+
+    .fruite-name a{
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+    }
+
+    .fruite-name span{
+        flex-shrink:0;
+        margin-left:10px;
+    }
+
+}
+.fruite-item .d-flex{
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+/* قیمت */
+.fruite-item .d-flex p{
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* دکمه */
+.fruite-item .d-flex .btn{
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* فقط موبایل */
+@media (max-width: 576px){
+    .fruite-item .d-flex{
+        flex-wrap: wrap !important;  /* اجازه بده اگر کم بود بشکند */
+    }
+
+    .fruite-item .d-flex p{
+        font-size: 14px;
+    }
+
+    .fruite-item .d-flex .btn{
+        width: 100%;   /* دکمه بره پایین ولی مرتب */
+        text-align: center;
+    }
+}
+
+
+/* Price */
+#amount{
+    display:block;
+    margin-top:8px;
+    font-weight:bold;
+    color:#0F3D34;
+}
+
+/* Radio */
+input[type="radio"]{
+    accent-color:#0F3D34;
+}
+
+label{
+    cursor:pointer;
+}
+
+/* Featured Product */
+.col-lg-3 img{
+    border-radius:10px;
+    transition:.3s;
+}
+
+.col-lg-3 .d-flex:hover img{
+    transform:scale(1.05);
+}
+
+.col-lg-3 h6{
+    font-weight:600;
+}
+
+/* Button */
+.col-lg-3 .btn{
+    transition:.3s;
+}
+
+.col-lg-3 .btn:hover{
+    background:#0F3D34;
+    color:#C8A96A !important;
+}
+
+/* Banner */
+.position-relative img{
+    border-radius:15px;
+}
+
+.position-relative h3{
+    box-shadow: 0 12px 30px rgba(15, 61, 52, 0.08);
+}
+
+/* Responsive */
+@media(max-width:992px){
+    .col-lg-3{
+        margin-bottom:30px;
+    }
+
+    .col-lg-3 .mb-3{
+        padding:15px;
+    }
+
+    .position-relative h3{
+        font-size:20px;
+    }
+}
+.VVV{
+    color: gold
+    ;
+}
+
+
+
+.III{
+    color: #0F3D34;
+}
+.form-range::-webkit-slider-thumb {
+    background: #C8A96A;
+}
+
+.form-range::-webkit-slider-runnable-track {
+    background:#367065 ;
+}
+
+.form-range::-moz-range-thumb {
+    background: white;
+    border: none;
+}
+
+.form-range::-moz-range-track {
+    background: white;
+}
+.gold{
+    background-color: #0F3D34;
+    color: #C8A96A;
+}
+.gold:hover{
+    background-color: white !important;
+    border: 2px solid #0F3D34 !important ;
+}
+.carttt{
+    background-color: #0F3D34;
+    color: #C8A96A;
+}
+.carttt:hover{
+    background-color: #C8A96A !important;
+    color: #0F3D34 !important;
+}
+</Style>
+<body>
+
+    <!-- TOPBAR -->
+<div class="container-fluid ">
+
+    <!-- Topbar -->
+    <div class="container">
+        <div class="topbar">
+
+            <div class="topbar-left">
+                <a href="#">
+                    <i class="fas fa-map-marker-alt"></i>
+                    123 Street, New York
+                </a>
+
+                <a href="#">
+                    <i class="fas fa-envelope"></i>
+                    Email@example.com
+                </a>
+            </div>
+
+            <div class="topbar-right">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Refunds</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="container">
+        <!-- Navbar -->
+    </div>
+
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light glass-nav sticky-top">
+  <div class="container">
+
+    <a class="navbar-brand fw-bold" href="#">Aria Jewlry</a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav">
+
+      <ul class="navbar-nav mx-auto gap-lg-3 text-center">
+        <li><a class="nav-link " href="index.html">Home</a></li>
+        <li><a class="nav-link active " href="shop.html">Shop</a></li>
+     <li class="nav-item dropdown">
+  <a class="nav-link" href="#" data-bs-toggle="dropdown">
+    Pages <i class="fas fa-chevron-down ms-1"></i>
+  </a>
+
+  <ul class="dropdown-menu">
+     <li><a class="dropdown-item" href="shop cart.html">Cart</a></li>
+    <li><a class="dropdown-item " href="checkout.html">Checkout</a></li>
+      <li><a class="dropdown-item " href="Testimonial.html">Testimonial</a></li>
+    <li><a class="dropdown-item" href="404PAGE.html">404 PAGE</a></li>
+   
+  </ul>
+</li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-icons d-flex align-items-center gap-3">
+
+        <button class="icon-btn" data-bs-toggle="modal" data-bs-target="#searchModal">
+          <i class="fas fa-search"></i>
+        </button>
+
+        <a href="#" class="icon-btn cart">
+          <i class="fa fa-shopping-bag"></i>
+          <span>3</span>
+        </a>
+
+        <a href="#" class="icon-btn">
+          <i class="fas fa-user"></i>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</nav>
+   <div class="page-header text-white">
+    <h1 class="text-center pt-4">Shop </h1>
+    <h4 class="text-center pt-2 pb-4">Home / Shop</h4>
+</div>
+
+   <div class="container py-5" bis_skin_checked="1">
+                <h1 class="mb-4"> Jewlry store</h1>
+                <div class="row g-4" bis_skin_checked="1">
+                    <div class="col-lg-12" bis_skin_checked="1">
+                        <div class="row g-4" bis_skin_checked="1">
+                            <div class="col-xl-3" bis_skin_checked="1">
+                                <div class="input-group w-100 mx-auto d-flex" bis_skin_checked="1">
+                                    <input type="search" class="form-control p-3" placeholder="keywords" >
+                                    <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-6" bis_skin_checked="1"></div>
+                            <div class="col-xl-3" bis_skin_checked="1">
+                                <div class="bg-light ps-3 py-3 rounded d-flex justify-content-between mb-4" bis_skin_checked="1">
+                                    <label for="fruits">Default Sorting:</label>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-4" bis_skin_checked="1">
+                            <div class="col-lg-3" bis_skin_checked="1">
+                                <div class="row g-4" bis_skin_checked="1">
+                                    <div class="col-lg-12" bis_skin_checked="1">
+                                       <div class="mb-3">
+    <h4>Categories</h4>
+
+    <ul class="list-unstyled fruite-categorie">
+
+        <li class="fruite-name">
+            <a href="#"><i class="fa fa-gem me-2"></i>Necklace</a>
+            <span>(3)</span>
+        </li>
+
+        <li class="fruite-name">
+            <a href="#"><i class="fa fa-ring me-2"></i>Ring</a>
+            <span>(5)</span>
+        </li>
+
+        <li class="fruite-name">
+            <a href="#"><i class="fa fa-gem me-2"></i>Bracelet</a>
+            <span>(4)</span>
+        </li>
+
+        <li class="fruite-name">
+            <a href="#"><i class="fa fa-gem me-2"></i>Earrings</a>
+            <span>(6)</span>
+        </li>
+
+        <li class="fruite-name">
+            <a href="#"><i class="fa fa-gem me-2"></i>Crown</a>
+            <span>(3)</span>
+        </li>
+
+    </ul>
+</div>
+                                    </div>
+                                    <div class="col-lg-12" >
+                                        <div class="mb-3" bis_skin_checked="1">
+                                            <h4 class="mb-2">Price</h4>
+                                            <input type="range" class="form-range w-100" id="rangeInput" name="rangeInput" min="0" max="500" value="0" oninput="amount.value=rangeInput.value">
+                                            <output id="amount" name="amount" min-velue="0" max-value="500" for="rangeInput">0</output>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12" >
+                                        <div class="mb-3" bis_skin_checked="1">
+                                            <h4>Jewlry</h4>
+                                            <div class="mb-2" bis_skin_checked="1">
+                                                <input type="radio" class="me-2" id="Categories-1" name="Categories-1" value="Beverages">
+                                                <label for="Categories-1"> Necklace</label>
+                                            </div>
+                                            <div class="mb-2" bis_skin_checked="1">
+                                                <input type="radio" class="me-2" id="Categories-2" name="Categories-1" value="Beverages">
+                                                <label for="Categories-2"> breslet</label>
+                                            </div>
+                                            <div class="mb-2" bis_skin_checked="1">
+                                                <input type="radio" class="me-2" id="Categories-3" name="Categories-1" value="Beverages">
+                                                <label for="Categories-3"> Ring</label>
+                                            </div>
+                                            <div class="mb-2" bis_skin_checked="1">
+                                                <input type="radio" class="me-2" id="Categories-4" name="Categories-1" value="Beverages">
+                                                <label for="Categories-4"> Earrings</label>
+                                            </div>
+                                            <div class="mb-2" bis_skin_checked="1">
+                                                <input type="radio" class="me-2" id="Categories-5" name="Categories-1" value="Beverages">
+                                                <label for="Categories-5"> Crown</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12" >
+                                        <h4 class="mb-3">Featured products</h4>
+                                        <div class="d-flex align-items-center justify-content-start" bis_skin_checked="1">
+                                            <div class="rounded me-4" style="width: 100px; height: 100px;" bis_skin_checked="1">
+                                                <img src="nwck1.jpg" class="img-fluid rounded" alt="">
+                                            </div>
+                                            <div bis_skin_checked="1">
+                                                <h6 class="mb-2">Necklace</h6>
+                                                <div class="d-flex mb-2" bis_skin_checked="1">
+                                                    <i class="fa fa-star VVV"></i>
+                                                    <i class="fa fa-star VVV"></i>
+                                                    <i class="fa fa-star VVV"></i>
+                                                    <i class="fa fa-star VVV"></i>
+                                                    <i class="fa fa-star vvv "></i>
+                                                </div>
+                                                <div class="d-flex mb-2" bis_skin_checked="1">
+                                                    <h5 class="fw-bold me-2">2.99 $</h5>
+                                                    <h5 class=" III text-decoration-line-through">4.11 $</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-start" bis_skin_checked="1">
+                                            <div class="rounded me-4" style="width: 100px; height: 100px;" bis_skin_checked="1">
+                                                <img src="b2.jpg" class="img-fluid rounded mt-2" alt="">
+                                            </div>
+                                            <div bis_skin_checked="1">
+                                                <h6 class="mb-2">Bracelet</h6>
+                                                <div class="d-flex mb-2" bis_skin_checked="1">
+                                                    <i class="fa fa-star VVV "></i>
+                                                    <i class="fa fa-star VVV "></i>
+                                                    <i class="fa fa-star VVV "></i>
+                                                    <i class="fa fa-star VVV "></i>
+                                                    <i class="fa fa-star VVV"></i>
+                                                </div>
+                                                <div class="d-flex mb-2" bis_skin_checked="1">
+                                                    <h5 class="fw-bold me-2">2.99 $</h5>
+                                                    <h5 class=" III text-decoration-line-through">4.11 $</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-start" bis_skin_checked="1">
+                                            <div class="rounded me-4" style="width: 100px; height: 100px;" bis_skin_checked="1">
+                                                <img src="ring2.jpg" class="img-fluid rounded mt-3" alt="">
+                                            </div>
+                                            <div bis_skin_checked="1">
+                                                <h6 class="mb-2">Ring</h6>
+                                                <div class="d-flex mb-2" bis_skin_checked="1">
+                                                    <i class="fa fa-star VVV "></i>
+                                                    <i class="fa fa-star VVV "></i>
+                                                    <i class="fa fa-star VVV "></i>
+                                                    <i class="fa fa-star VVV "></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <div class="d-flex mb-2" bis_skin_checked="1">
+                                                    <h5 class="fw-bold me-2">2.99 $</h5>
+                                                    <h5 class=" III text-decoration-line-through">4.11 $</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-center my-4" bis_skin_checked="1">
+                                            <a href="#" class="btn border gold px-4 py-3 rounded-pill  w-100">Vew More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12" >
+                                        <div class="position-relative" bis_skin_checked="1">
+                                            <img src="nwck1.jpg" class="img-fluid w-100 rounded" alt="">
+                                            <div class="position-absolute" style="top: 50%; right: 10px; transform: translateY(-50%);" bis_skin_checked="1">
+                                                <h3 class=" text-light fw-bold">Jewlry brand</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-9" bis_skin_checked="1">
+                                <div class="row g-4 justify-content-center" bis_skin_checked="1">
+                                    <div class=" col-12 col-md-6 col-lg-6 col-xl-4" bis_skin_checked="1">
+                                        <div class="rounded position-relative fruite-item" bis_skin_checked="1">
+                                            <div class="fruite-img" bis_skin_checked="1">
+                                                <img src="neck11.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            </div>
+                                            <div class=" gg px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;" bis_skin_checked="1"> Necklace</div>
+                                            <div class="p-4  border-top-0 rounded-bottom" bis_skin_checked="1">
+                                                <h4>Necklace</h4>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap"  >
+                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 </p>
+                                                    <a href="#" class="btn border  rounded-pill px-3 carttt" ><i class="fa fa-shopping-bag me-2 "></i> Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" col-12 col-md-6 col-lg-6 col-xl-4" bis_skin_checked="1">
+                                        <div class="rounded position-relative fruite-item" bis_skin_checked="1">
+                                            <div class="fruite-img" bis_skin_checked="1">
+                                                <img src="neck12.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            </div>
+                                            <div class=" gg px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;" bis_skin_checked="1"> Necklace</div>
+                                            <div class="p-4  border-top-0 rounded-bottom" bis_skin_checked="1">
+                                                <h4>Necklace</h4>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap"  >
+                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 </p>
+                                                    <a href="#" class="btn border  rounded-pill px-3 carttt" ><i class="fa fa-shopping-bag me-2 "></i> Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                      <div class="  col-12 col-md-6 col-lg-6 col-xl-4" bis_skin_checked="1">
+                                        <div class="rounded position-relative fruite-item" bis_skin_checked="1">
+                                            <div class="fruite-img" bis_skin_checked="1">
+                                                <img src="neck13.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            </div>
+                                            <div class=" gg px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;" bis_skin_checked="1"> Necklace</div>
+                                            <div class="p-4  border-top-0 rounded-bottom" bis_skin_checked="1">
+                                                <h4>Necklace</h4>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap"  >
+                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 </p>
+                                                    <a href="#" class="btn border  rounded-pill px-3 carttt" ><i class="fa fa-shopping-bag me-2 "></i> Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 
+                                    <div class="  col-12 col-md-6 col-lg-6 col-xl-4" bis_skin_checked="1">
+                                        <div class="rounded position-relative fruite-item" bis_skin_checked="1">
+                                            <div class="fruite-img" bis_skin_checked="1">
+                                                <img src="breslet.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            </div>
+                                            <div class=" gg px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;" bis_skin_checked="1"> Breslet</div>
+                                            <div class="p-4  border-top-0 rounded-bottom" bis_skin_checked="1">
+                                                <h4>Breslet</h4>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap"  >
+                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 </p>
+                                                    <a href="#" class="btn border  rounded-pill px-3 carttt" ><i class="fa fa-shopping-bag me-2 "></i> Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                     <div class="  col-12 col-md-6 col-lg-6 col-xl-4" bis_skin_checked="1">
+                                        <div class="rounded position-relative fruite-item" bis_skin_checked="1">
+                                            <div class="fruite-img" bis_skin_checked="1">
+                                                <img src="b2.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            </div>
+                                            <div class=" gg px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;" bis_skin_checked="1"> Breslet</div>
+                                            <div class="p-4  border-top-0 rounded-bottom" bis_skin_checked="1">
+                                                <h4>Breslet</h4>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap"  >
+                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 </p>
+                                                    <a href="#" class="btn border  rounded-pill px-3 carttt" ><i class="fa fa-shopping-bag me-2 "></i> Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="  col-12  col-md-6 col-lg-6 col-xl-4" bis_skin_checked="1">
+                                        <div class="rounded position-relative fruite-item" bis_skin_checked="1">
+                                            <div class="fruite-img" bis_skin_checked="1">
+                                                <img src="b4.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            </div>
+                                            <div class=" gg px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;" bis_skin_checked="1"> Breslet</div>
+                                            <div class="p-4  border-top-0 rounded-bottom" bis_skin_checked="1">
+                                                <h4>Breslet</h4>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap"  >
+                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 </p>
+                                                    <a href="#" class="btn border  rounded-pill px-3 carttt" ><i class="fa fa-shopping-bag me-2 "></i> Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                      <div class="  col-12 col-md-6 col-lg-6 col-xl-4" bis_skin_checked="1">
+                                        <div class="rounded position-relative fruite-item" bis_skin_checked="1">
+                                            <div class="fruite-img" bis_skin_checked="1">
+                                                <img src="Ring.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            </div>
+                                            <div class=" gg px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;" bis_skin_checked="1"> Ring</div>
+                                            <div class="p-4  border-top-0 rounded-bottom" bis_skin_checked="1">
+                                                <h4> Ring</h4>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap"  >
+                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 </p>
+                                                    <a href="#" class="btn border  rounded-pill px-3 carttt" ><i class="fa fa-shopping-bag me-2 "></i> Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                      <div class="  col-12 col-md-6 col-lg-6 col-xl-4" bis_skin_checked="1">
+                                        <div class="rounded position-relative fruite-item" bis_skin_checked="1">
+                                            <div class="fruite-img" bis_skin_checked="1">
+                                                <img src="55.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            </div>
+                                            <div class=" gg px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;" bis_skin_checked="1"> Ring </div>
+                                            <div class="p-4  border-top-0 rounded-bottom" bis_skin_checked="1">
+                                                <h4>Ring</h4>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap"  >
+                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 </p>
+                                                    <a href="#" class="btn border  rounded-pill px-3 carttt" ><i class="fa fa-shopping-bag me-2 "></i> Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="  col-12 col-md-6 col-lg-6 col-xl-4" bis_skin_checked="1">
+                                        <div class="rounded position-relative fruite-item" bis_skin_checked="1">
+                                            <div class="fruite-img" bis_skin_checked="1">
+                                                <img src="ring44.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            </div>
+                                            <div class=" gg px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;" bis_skin_checked="1"> Earrings </div>
+                                            <div class="p-4  border-top-0 rounded-bottom" bis_skin_checked="1">
+                                                <h4>Ring</h4>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap"  >
+                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 </p>
+                                                    <a href="#" class="btn border  rounded-pill px-3 carttt" ><i class="fa fa-shopping-bag me-2 "></i> Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+ 
+                                     <div class= "  col-12 col-md-6 col-lg-6 col-xl-4" bis_skin_checked="1">
+                                        <div class="rounded position-relative fruite-item" bis_skin_checked="1">
+                                            <div class="fruite-img" bis_skin_checked="1">
+                                                <img src="re.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            </div>
+                                            <div class=" gg px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;" bis_skin_checked="1"> Earrings </div>
+                                            <div class="p-4  border-top-0 rounded-bottom" bis_skin_checked="1">
+                                                <h4>Earrings</h4>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap"  >
+                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 </p>
+                                                    <a href="#" class="btn border  rounded-pill px-3 carttt" ><i class="fa fa-shopping-bag me-2 "></i> Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="  col-12 col-md-6 col-lg-6 col-xl-4" bis_skin_checked="1">
+                                        <div class="rounded position-relative fruite-item" bis_skin_checked="1">
+                                            <div class="fruite-img" bis_skin_checked="1">
+                                                <img src="ee33.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            </div>
+                                            <div class=" gg px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;" bis_skin_checked="1"> Earrings </div>
+                                            <div class="p-4  border-top-0 rounded-bottom" bis_skin_checked="1">
+                                                <h4>Earrings</h4>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap"  >
+                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 </p>
+                                                    <a href="#" class="btn border  rounded-pill px-3 carttt" ><i class="fa fa-shopping-bag me-2 "></i> Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                      <div class=" col-12 col-md-6 col-lg-6 col-xl-4" bis_skin_checked="1">
+                                        <div class="rounded position-relative fruite-item" bis_skin_checked="1">
+                                            <div class="fruite-img" bis_skin_checked="1">
+                                                <img src="66.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            </div>
+                                            <div class=" gg px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;" bis_skin_checked="1"> Earrings </div>
+                                            <div class="p-4  border-top-0 rounded-bottom" bis_skin_checked="1">
+                                                <h4>Earrings</h4>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap"  >
+                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 </p>
+                                                    <a href="#" class="btn border  rounded-pill px-3 carttt" ><i class="fa fa-shopping-bag me-2 "></i> Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                    
+                                    
+                                
+                                    <div class="col-12" bis_skin_checked="1">
+                                        <div class="pagination d-flex justify-content-center mt-5" bis_skin_checked="1">
+                                            <a href="#" class="rounded ff ">«</a>
+                                            <a href="#" class="rounded ff">1</a>
+                                            <a href="#" class="rounded ff">2</a>
+                                            <a href="#" class="rounded ff">3</a>
+                                            <a href="#" class="rounded ff">4</a>
+                                            <a href="#" class="rounded ff">5</a>
+                                            <a href="#" class="rounded ff">6</a>
+                                            <a href="#" class="rounded ff">»</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+       <!-- Footer Start -->
+           <div class="container-fluid footer py-4 wow mt-3">
+            <div class="container py-4  bob">
+                <div class="row g-5">
+                   
+                     <div class="col-md-6 col-lg-6 col-xl-3">
+                     <h4 class=" mb-4  footertitle"> why people like us!</h4>
+                    <p class="light-23">Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae maiores nulla dolorum isteiusto quos sequi?</p>
+                          <div class="position-relative">
+                                <input class="form-control  w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+                                <button type="button" class="btn-0 sosmas  position-absolute top-0 end-0 p-2 mt-2 me-2 rounded ">SignUp</button>
+                            </div>
+                </div>
+                   <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class=" mb-4' footertitle ">Quick Link</h4>
+                            <a href="index.html" class="pt-3"><i class="fas fa-angle-right me-2"></i> Home</a>
+                            <a href="shop.html" class="pt-3"><i class="fas fa-angle-right me-2"></i> shop</a>
+                            <a href="services.html" class="pt-3"><i class="fas fa-angle-right me-2"></i> Shop cart</a>
+                            <a href="shop cart.html" class="pt-3"><i class="fas fa-angle-right me-2"></i>chackout</a>
+                             <a href="contact.html" class="pt-3"><i class="fas fa-angle-right me-2"></i>Contact</a>
+                        </div>
+                    </div>
+                     <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class=" mb-4  footertitle"> Shop Info</h4>
+                            <a href="" class="pt-2"><span class="">About Us</span></a>
+                            <a href="#" class="pt-3"><span> Return policy</span></a>
+                            <a href="" class="pt-2"><span>privacy policy</span></a>
+                            
+                           
+                              <a href="" class="pt-3"></i><span> Trems & Condition</span></a>
+                              <a href="" class="pt-3"><span>FAQs & Help </span></a>
+                          
+                           
+                        </div>
+                    </div>
+                   <div class="col-md-6 col-lg-6 col-xl-3">
+  <div class="footer-item-post d-flex flex-column">
+    <h4 class="mb-4  footertitle">Contact Info</h4>
+
+    <div class="d-flex align-items-center box-14 light-22 rounded p-2">
+      <div class="icon-wrapper-13 ms-3">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <div>
+        <h6 class="fw-bold dark-text ms-2">eltaf market bazar khosh</h6>
+        <h6 class="ms-3">Herat, Afghanistan</h6>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center box-14 light-22 rounded p-2 mt-2">
+      <div class="icon-wrapper-13 ms-3">
+        <i class="fa fa-phone"></i>
+      </div>
+      <div>
+        <h6 class="fw-bold dark-text ms-1">+9345868692</h6>
+        <h6 class="ms-1">project123@gmail.com</h6>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center box-14 light-22 rounded p-2 mt-2">
+      <div class="icon-wrapper-13 ms-3">
+        <i class="fa fa-clock"></i>
+      </div>
+      <div>
+        <h6 class="fw-bold dark-text ms-2">24 Hours/7day open</h6>
+        <h6 class="ms-3">office:8:00AM-5:30PM</h6>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+                </div>
+            </div>
+            <!-- icon -->
+
+
+        </div>
+        <!-- Footer End -->
+       <!-- Copyright Start -->
+<div class="Copyright text-center py-2">
+    <span><i class="fa fa-copyright"></i> 2025 Your Company</span>
+    <span class="mx-2">|</span>
+    <span><i class="fa fa-book"></i> Privacy Policy</span>
+</div>
+<!-- Copyright End -->
+
+
+
+      <a href="#" class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </a>
+
+    <script>
+      const backToTop = document.querySelector(".back-to-top");
+      if (backToTop) {
+        window.addEventListener("scroll", () => {
+          backToTop.style.display = window.scrollY > 200 ? "flex" : "none";
+        });
+        backToTop.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+    </script>
+</body>
+</html>

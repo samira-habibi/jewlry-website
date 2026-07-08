@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chackout</title>
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css.css">
+</head>
+<style>
+    /* ...................................checked out...........................*/
+
+/* MAIN BOX */
+.checkout-box {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(15, 61, 52, 0.08);
+}
+
+/* TABLE */
+.table thead th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+
+.table tbody tr:hover {
+  background: var(--hover);
+  transition: 0.2s;
+}
+
+/* PRODUCT IMAGE */
+.product-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 2px solid var(--border);
+}
+
+/* SECTION BOX */
+.section-box {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  padding-left: 16px; /* 👈 فقط فاصله اضافه شد */
+  padding-right: 16px; /* 👈 فقط فاصله اضافه شد */
+}
+
+.section-box h5 {
+  margin-bottom: 10px;
+}
+
+/* OPTION (shipping/payment) */
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  background: var(--card);
+}
+
+.option:hover {
+  border-color: var(--primary);
+  background: var(--hover);
+  transform: translateY(-2px);
+}
+
+/* RADIO */
+.option input {
+  accent-color: var(--primary);
+  transform: scale(1.1);
+}
+
+/* BUTTON */
+.btn-order {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-order:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.but-020 {
+  background-color: #0f3d34;
+}
+
+input[type="radio"] {
+  accent-color: #0f3d34;
+}
+
+/* ===== RESPONSIVE ONLY ===== */
+@media (max-width: 768px) {
+  .checkout-box {
+    padding: 14px;
+  }
+
+  .product-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .option {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-order {
+    padding: 12px;
+  }
+}
+
+</style>
+
+<body>
+
+    <!-- TOPBAR -->
+<div class="container-fluid ">
+
+    <!-- Topbar -->
+    <div class="container">
+        <div class="topbar">
+
+            <div class="topbar-left">
+                <a href="#">
+                    <i class="fas fa-map-marker-alt"></i>
+                    123 Street, New York
+                </a>
+
+                <a href="#">
+                    <i class="fas fa-envelope"></i>
+                    Email@example.com
+                </a>
+            </div>
+
+            <div class="topbar-right">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Refunds</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="container">
+        <!-- Navbar -->
+    </div>
+
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light glass-nav sticky-top">
+  <div class="container">
+
+    <a class="navbar-brand fw-bold" href="#">Aria Jewlry</a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav">
+
+      <ul class="navbar-nav mx-auto gap-lg-3 text-center">
+        <li><a class="nav-link " href="index.html">Home</a></li>
+        <li><a class="nav-link " href="shop.html">Shop</a></li>
+     <li class="nav-item dropdown">
+  <a class="nav-link  active " href="#" data-bs-toggle="dropdown">
+    Pages <i class="fas fa-chevron-down ms-1"></i>
+  </a>
+
+  <ul class="dropdown-menu">
+     <li><a class="dropdown-item" href="shop cart.html">Cart</a></li>
+    <li><a class="dropdown-item active" href="checkout.html">Checkout</a></li>
+      <li><a class="dropdown-item" href="Testimonial.html">Testimonial</a></li>
+    <li><a class="dropdown-item " href="404PAGE.html">404 PAGE</a></li>
+   
+  </ul>
+</li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-icons d-flex align-items-center gap-3">
+
+        <button class="icon-btn" data-bs-toggle="modal" data-bs-target="#searchModal">
+          <i class="fas fa-search"></i>
+        </button>
+
+        <a href="#" class="icon-btn cart">
+          <i class="fa fa-shopping-bag"></i>
+          <span>3</span>
+        </a>
+
+        <a href="#" class="icon-btn">
+          <i class="fas fa-user"></i>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</nav>
+   <div class="page-header text-white">
+    <h1 class="text-center pt-4">checkout</h1>
+    <h4 class="text-center pt-2 pb-4">Home / pages /chackout</h4>
+</div>
+
+<div class="container py-5" bis_skin_checked="1">
+                <h1 class="mb-4" style="color: #0F3D34;">Billing details</h1>
+                <form action="#">
+                    <div class="row g-5" bis_skin_checked="1">
+                        <div class="col-md-12 col-lg-6 col-xl-7" bis_skin_checked="1">
+                            <div class="row" bis_skin_checked="1">
+                                <div class="col-md-12 col-lg-6" bis_skin_checked="1">
+                                    <div class="form-item w-100" bis_skin_checked="1">
+                                        <label class="form-label my-3">First Name<sup>*</sup></label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-6" bis_skin_checked="1">
+                                    <div class="form-item w-100" bis_skin_checked="1">
+                                        <label class="form-label my-3">Last Name<sup>*</sup></label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-item" bis_skin_checked="1">
+                                <label class="form-label my-3">Company Name<sup>*</sup></label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-item" bis_skin_checked="1">
+                                <label class="form-label my-3">Address <sup>*</sup></label>
+                                <input type="text" class="form-control" placeholder="House Number Street Name">
+                            </div>
+                            <div class="form-item" bis_skin_checked="1">
+                                <label class="form-label my-3">Town/City<sup>*</sup></label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-item" bis_skin_checked="1">
+                                <label class="form-label my-3">Country<sup>*</sup></label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-item" bis_skin_checked="1">
+                                <label class="form-label my-3">Postcode/Zip<sup>*</sup></label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-item" bis_skin_checked="1">
+                                <label class="form-label my-3">Mobile<sup>*</sup></label>
+                                <input type="tel" class="form-control">
+                            </div>
+                            <div class="form-item" bis_skin_checked="1">
+                                <label class="form-label my-3">Email Address<sup>*</sup></label>
+                                <input type="email" class="form-control">
+                            </div>
+                            <div class="form-check my-3" bis_skin_checked="1">
+                                <input type="checkbox" class="form-check-input" id="Account-1" name="Accounts" value="Accounts">
+                                <label class="form-check-label" for="Account-1">Create an account?</label>
+                            </div>
+                            <hr>
+                            <div class="form-check my-3" bis_skin_checked="1">
+                                <input class="form-check-input" type="checkbox" id="Address-1" name="Address" value="Address">
+                                <label class="form-check-label" for="Address-1">Ship to a different address?</label>
+                            </div>
+                            <div class="form-item" bis_skin_checked="1">
+                                <textarea name="text" class="form-control" spellcheck="false" cols="30" rows="11" placeholder="Oreder Notes (Optional)"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-5 checkout-box">
+
+    <!-- TABLE -->
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Products</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th>
+                        <div class="d-flex align-items-center mt-2">
+                            <img src="neck.jpg"
+                                 class="img-fluid rounded-circle product-img">
+                        </div>
+                    </th>
+                    <td class="py-5">Necklace</td>
+                    <td class="py-5">$69.00</td>
+                    <td class="py-5">3</td>
+                    <td class="py-5">$138.00</td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <div class="d-flex align-items-center mt-2">
+                            <img src="breslet.jpg"
+                                 class="img-fluid rounded-circle product-img">
+                        </div>
+                    </th>
+                    <td class="py-5">Bracelet</td>
+                    <td class="py-5">$69.00</td>
+                    <td class="py-5">1</td>
+                    <td class="py-5">$138.00</td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <div class="d-flex align-items-center mt-2">
+                            <img src="Ring.jpg"
+                                 class="img-fluid rounded-circle product-img">
+                        </div>
+                    </th>
+                    <td class="py-5">Ring</td>
+                    <td class="py-5">$69.00</td>
+                    <td class="py-5">2</td>
+                    <td class="py-5">$138.00</td>
+                </tr>
+
+                <!-- SUBTOTAL -->
+                <tr>
+                    <td></td><td></td><td></td>
+                    <td class="py-5"><b>Subtotal</b></td>
+                    <td class="py-5"><b>$414.00</b></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SHIPPING -->
+    <div class="section-box">
+
+        <h5>Shipping</h5>
+
+        <label class="option">
+            <input type="radio" name="shipping">
+            Free Shipping
+        </label>
+
+        <label class="option">
+            <input type="radio" name="shipping">
+            Flat rate: $15.00
+        </label>
+
+        <label class="option">
+            <input type="radio" name="shipping">
+            Local Pickup: $8.00
+        </label>
+
+    </div>
+
+    <!-- PAYMENT -->
+    <div class="section-box">
+
+        <h5>Payment Method</h5>
+
+        <label class="option">
+            <input type="radio" name="payment">
+            Direct Bank Transfer
+        </label>
+
+        <label class="option">
+            <input type="radio" name="payment">
+            Check Payments
+        </label>
+
+        <label class="option">
+            <input type="radio" name="payment">
+            Cash On Delivery
+        </label>
+
+        <label class="option">
+            <input type="radio" name="payment">
+            Paypal
+        </label>
+
+    </div>
+
+    <!-- BUTTON -->
+    <button type="button" class="btn-order but-020 text-light">
+        Place Order
+    </button>
+
+</div>
+                    </div>
+                </form>
+            </div>
+
+   
+    
+       <!-- Footer Start -->
+          <div class="container-fluid footer py-4 wow mt-3">
+            <div class="container py-4  bob">
+                <div class="row g-5">
+                   
+                     <div class="col-md-6 col-lg-6 col-xl-3">
+                     <h4 class=" mb-4  footertitle"> why people like us!</h4>
+                    <p class="light-23">Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae maiores nulla dolorum isteiusto quos sequi?</p>
+                          <div class="position-relative">
+                                <input class="form-control  w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+                                <button type="button" class="btn-0 sosmas position-absolute top-0 end-0 p-2 mt-2 me-2 rounded ">SignUp</button>
+                            </div>
+                </div>
+                   <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class=" mb-4' footertitle ">Quick Link</h4>
+                            <a href="index.html" class="pt-3"><i class="fas fa-angle-right me-2"></i> Home</a>
+                            <a href="shop.html" class="pt-3"><i class="fas fa-angle-right me-2"></i> shop</a>
+                            <a href="services.html" class="pt-3"><i class="fas fa-angle-right me-2"></i> Shop cart</a>
+                            <a href="shop cart.html" class="pt-3"><i class="fas fa-angle-right me-2"></i>chackout</a>
+                             <a href="contact.html" class="pt-3"><i class="fas fa-angle-right me-2"></i>Contact</a>
+                        </div>
+                    </div>
+                     <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class=" mb-4  footertitle"> Shop Info</h4>
+                            <a href="" class="pt-2"><span class="">About Us</span></a>
+                            <a href="#" class="pt-3"><span> Return policy</span></a>
+                            <a href="" class="pt-2"><span>privacy policy</span></a>
+                            
+                           
+                              <a href="" class="pt-3"></i><span> Trems & Condition</span></a>
+                              <a href="" class="pt-3"><span>FAQs & Help </span></a>
+                          
+                           
+                        </div>
+                    </div>
+                   <div class="col-md-6 col-lg-6 col-xl-3">
+  <div class="footer-item-post d-flex flex-column">
+    <h4 class="mb-4  footertitle">Contact Info</h4>
+
+    <div class="d-flex align-items-center box-14 light-22 rounded p-2">
+      <div class="icon-wrapper-13 ms-3">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <div>
+        <h6 class="fw-bold dark-text ms-2">eltaf market bazar khosh</h6>
+        <h6 class="ms-3">Herat, Afghanistan</h6>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center box-14 light-22 rounded p-2 mt-2">
+      <div class="icon-wrapper-13 ms-3">
+        <i class="fa fa-phone"></i>
+      </div>
+      <div>
+        <h6 class="fw-bold dark-text ms-1">+9345868692</h6>
+        <h6 class="ms-1">project123@gmail.com</h6>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center box-14 light-22 rounded p-2 mt-2">
+      <div class="icon-wrapper-13 ms-3">
+        <i class="fa fa-clock"></i>
+      </div>
+      <div>
+        <h6 class="fw-bold dark-text ms-2">24 Hours/7day open</h6>
+        <h6 class="ms-3">office:8:00AM-5:30PM</h6>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+                </div>
+            </div>
+            <!-- icon -->
+
+
+        </div>
+        <!-- Footer End -->
+       <!-- Copyright Start -->
+<div class="Copyright text-center py-2">
+    <span><i class="fa fa-copyright"></i> 2025 Your Company</span>
+    <span class="mx-2">|</span>
+    <span><i class="fa fa-book"></i> Privacy Policy</span>
+</div>
+<!-- Copyright End -->
+
+
+
+      <a href="#" class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </a>
+
+    <script>
+      const backToTop = document.querySelector(".back-to-top");
+      if (backToTop) {
+        window.addEventListener("scroll", () => {
+          backToTop.style.display = window.scrollY > 200 ? "flex" : "none";
+        });
+        backToTop.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+    </script>
+</body>
+</html>
